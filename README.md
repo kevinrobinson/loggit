@@ -3,7 +3,7 @@ Embracing the log for UI engineering!  As data flows through, it's appended to a
 
 Preserving more information enables features like undo, optimistic updates or surfacing conflicting edits by simply swapping in different computations over the log.
 
-# How loggit works
+# How it works
 The library provides a `loggit` object to components as the API, which includes:
  - `recordFact`: takes a fact about something that happened, an `Action` since this is using Redux as a starting point
  - `computeFor`: the way components ask for computation to be performed.  They need to pass a reference to themselves (the React component), and need to implement a `computations` method that returns a map of `Computation` objects.
