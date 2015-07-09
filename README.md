@@ -33,22 +33,16 @@ bounding the cache)
 And finally, there's a `PrecomputeReactRenderer`, which is slightly more involved and experimental.  It uses a seam in the loggit API to React components that lets it track which components need which computations.  It can then use this information to be more efficient about updating the UI than just doing a top-down render.  This involves reaching into React internals describing the component tree, but essentially walks the tree, checking if the computations that the component needs have changed, and if they haven't, then we don't need to perform the render/reconciliation step for that component.  We do still need to check its children though, since data doesn't flow top-down anymore (it's as if it were side-loaded).  This is similar to the discussion in https://github.com/facebook/react/issues/3398#issuecomment-118532289, although the implementation here is simple and naive.
 
 ## Compaction
----
-I wrote an initial key-based compaction strategy, just as a proof of concept for reclaiming memory space.  More information is in this issue: 
+I wrote an initial key-based compaction strategy, just as a proof of concept for reclaiming memory space.  More information is in this issue: https://github.com/kevinrobinson/loggit/issues/2
 
 # Profiling
-There are notes and data about initial profiling in this issue:
+There are data and notes from initial profiling in this issue: https://github.com/kevinrobinson/loggit/issues/1
 
 
 # Starting points to read code
-- Using loggit from a component:
-https://github.com/kevinrobinson/redux/blob/41a7e65cdccfc850583a2bb502a66a880d5e9a5f/examples/loggit-todomvc/components/MainSection.js#L45
-
-- Where the outer pieces of the system are stitched together, and where the `loggit` API is created for components to use:
-https://github.com/kevinrobinson/redux/blob/41a7e65cdccfc850583a2bb502a66a880d5e9a5f/examples/loggit-todomvc/loggit/shell.js#L19
-
-- An optimizer:
-https://github.com/kevinrobinson/redux/blob/41a7e65cdccfc850583a2bb502a66a880d5e9a5f/examples/loggit-todomvc/loggit/optimizers/memoizing_snapshot_optimizer.js
+- Using loggit from a component: [writing](https://github.com/kevinrobinson/loggit/blob/master/loggit-todomvc/components/MainSection.js#L37) and  [reading](https://github.com/kevinrobinson/loggit/blob/master/loggit-todomvc/components/MainSection.js#L56)
+- Stiching the outer pieces of the system together to create the `loggit` API for components: [shell.js](https://github.com/kevinrobinson/loggit/blob/master/loggit-todomvc/loggit/shell.js#L19)
+- An [optimizer](https://github.com/kevinrobinson/loggit/blob/master/loggit-todomvc/loggit/optimizers/memoizing_snapshot_optimizer.js)
 
 # Demo app
 
