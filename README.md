@@ -25,8 +25,8 @@ There are also a few optimizers, that can optimize the computation instead of ju
   - `NoopOptimizer`: does nothing, it just does reduce over the log each time
   - `MemoizingOptimizer`: memoizes some computations (with not very sensible semantics around 
 bounding the cache)
- - `MemoizingOptimizerV2`: same thing, just trying to be simpler about how the internals work and simpler about bounding the size of the cache
- - `MemoizingSnapshotOptimizer`: memoizes calls but also caches snapshots of reductions over the log, to start from when performing subsequent reduce operations.  Cache here isn't bounded at the moment.
+  - `MemoizingOptimizerV2`: same thing, just trying to be simpler about how the internals work and simpler about bounding the size of the cache
+  - `MemoizingSnapshotOptimizer`: memoizes calls but also caches snapshots of reductions over the log, to start from when performing subsequent reduce operations.  Cache here isn't bounded at the moment.
 
 
 ## PrecomputeReactRenderer
