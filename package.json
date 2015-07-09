@@ -1,0 +1,48 @@
+{
+  "name": "loggit",
+  "version": "0.2.0",
+  "description": "Embracing the log in the UI",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "scripts/browser",
+    "build": "scripts/build",
+    "clean": "scripts/clean",
+    "lint": "scripts/lint",
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kevinrobinson/loggit.git"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "log",
+    "immutable",
+    "flux"
+  ],
+  "author": "Kevin Robinson (http://github.com/kevinrobinson)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kevinrobinson/loggit/issues"
+  },
+  "homepage": "https://github.com/kevinrobinson/loggit",
+  "devDependencies": {
+    "babel": "^5.5.8",
+    "babel-core": "^5.5.8",
+    "babel-eslint": "^3.1.15",
+    "babel-loader": "^5.1.4",
+    "eslint": "^0.23",
+    "eslint-config-airbnb": "0.0.6",
+    "eslint-plugin-react": "^2.3.0",
+    "expect": "^1.6.0",
+    "istanbul": "^0.3.15",
+    "jsdom": "~5.4.3",
+    "mocha": "^2.2.5",
+    "mocha-jsdom": "~0.4.0",
+    "react": "^0.13.0",
+    "react-hot-loader": "^1.2.7",
+    "rimraf": "^2.3.4",
+    "webpack": "^1.9.6",
+    "webpack-dev-server": "^1.8.2"
+  }
+}
