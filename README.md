@@ -15,12 +15,12 @@ Reducers are the only computations used at this point.  `Computation` objects ar
 You can see a slideshow with notes walking through whiteboarding the overall idea of how this is implemented here: https://t.co/CJSlYMaFWs
 
 
-## Renderers
+### Renderers
 There are a few different renderers, which are notified when facts are appended to the log, and can respond in some way to update the view.  These are:
 - `NaiveReactRenderer`: after each fact, it calls `React.render` and does a top-down render.
 - `RafReactRenderere`: runs a requestAnimationFrame loop, which will batch up multiple facts between frames
 
-## Compute optimizers
+### Compute optimizers
 There are also a few optimizers, that can optimize the computation instead of just reducing over the whole log each time.  These are:
   - `NoopOptimizer`: does nothing, it just does reduce over the log each time
   - `MemoizingOptimizer`: memoizes some computations (with not very sensible semantics around 
@@ -29,10 +29,10 @@ bounding the cache)
   - `MemoizingSnapshotOptimizer`: memoizes calls but also caches snapshots of reductions over the log, to start from when performing subsequent reduce operations.  Cache here isn't bounded at the moment.
 
 
-## PrecomputeReactRenderer
+### PrecomputeReactRenderer
 And finally, there's a `PrecomputeReactRenderer`, which is slightly more involved and experimental.  It uses a seam in the loggit API to React components that lets it track which components need which computations.  It can then use this information to be more efficient about updating the UI than just doing a top-down render.  This involves reaching into React internals describing the component tree, but essentially walks the tree, checking if the computations that the component needs have changed, and if they haven't, then we don't need to perform the render/reconciliation step for that component.  We do still need to check its children though, since data doesn't flow top-down anymore (it's as if it were side-loaded).  This is similar to the discussion in https://github.com/facebook/react/issues/3398#issuecomment-118532289, although the implementation here is simple and naive.
 
-## Compaction
+### Compaction
 I wrote an initial key-based compaction strategy, just as a proof of concept for reclaiming memory space.  More information is in this issue: https://github.com/kevinrobinson/loggit/issues/2
 
 # Profiling
@@ -44,7 +44,7 @@ There are data and notes from initial profiling in this issue: https://github.co
 - Stiching the outer pieces of the system together to create the `loggit` API for components: [shell.js](https://github.com/kevinrobinson/loggit/blob/master/loggit-todomvc/loggit/shell.js#L19)
 - An [optimizer](https://github.com/kevinrobinson/loggit/blob/master/loggit-todomvc/loggit/optimizers/memoizing_snapshot_optimizer.js)
 
-# Demo app
+### Demo app
 
 There's a demo app in `loggit-todomvc`, to run it:
 ```
