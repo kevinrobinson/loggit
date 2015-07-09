@@ -1,5 +1,7 @@
 # loggit
-Embracing the log for UI engineering!  As data flows through, it's appended to an immutable log.  React components describe what computations they want run on that log in a `computations` method.  They can then ask the library to perform those computations directly in the render method.
+Embracing the log for UI engineering!
+
+As data flows through, it's appended to an immutable log.  React components describe what computations they want run on that log in a `computations` method.  They can then ask the library to perform those computations directly in the render method.
 
 Preserving more information enables features like undo, optimistic updates or surfacing conflicting edits by simply swapping in different computations over the log.
 
