@@ -33,14 +33,14 @@ export default class Shell {
   // for profiling.
   initComponents() {
     // precomputed
-    // const components = this._withPrecomputeRenderer(this.reactClass, this.el, this.log, MemoizingSnapshotOptimizer);
+    const components = this._withPrecomputeRenderer(this.reactClass, this.el, this.log, MemoizingSnapshotOptimizer);
 
     // isolated
-    const partially = this._withIsolatedComponents.bind(this, this.reactClass, this.el, this.log);
+    // const partially = this._withIsolatedComponents.bind(this, this.reactClass, this.el, this.log);
     // const components = partially(NoopOptimizer, NaiveReactRenderer);
     // const components = partially(MemoizingSnapshotOptimizer, NaiveReactRenderer);
 
-    const components = partially(NoopOptimizer, RafReactRenderer);
+    // const components = partially(NoopOptimizer, RafReactRenderer);
     // const components = partially(MemoizingOptimizer, RafReactRenderer);
     // const components = partially(MemoizingSnapshotOptimizer, RafReactRenderer);
     
