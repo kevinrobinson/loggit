@@ -1,3 +1,5 @@
+This is a side project.
+
 # loggit
 Embracing the log for UI engineering!
 
@@ -5,14 +7,23 @@ As data flows through, it's appended to an immutable log.  React components desc
 
 Preserving more information enables features like undo, optimistic updates or surfacing conflicting edits by simply swapping in different computations over the log.
 
+This slideshow walks through [why this is powerful in more detail](docs/embrace_the_log_motivating_why.pdf).
+
+![why screenshot](docs/why_screenshot.png)
+
+[Full talk from React Europe](https://www.youtube.com/watch?v=EOz4D_714R8&index=3&list=PLCC436JpVnK3HvUSAHpt-LRJkIK8pQG6R)
+
 # How it works
+=======
 The library provides a `loggit` object to components as the API, which includes:
  - `recordFact`: takes a fact about something that happened, an `Action` since this is using Redux as a starting point
  - `computeFor`: the way components ask for computation to be performed.  They need to pass a reference to themselves (the React component), and need to implement a `computations` method that returns a map of `Computation` objects.
 
 Reducers are the only computations used at this point.  `Computation` objects are like plain reducer functions, but they explicitly have the shape `{initial,reducer}`, rather than having the initial value hidden inside the reducer.  This is so that even if there are no facts, the return value of the `Computation` still has the same shape, and is not undefined.
 
-You can see a slideshow with notes walking through whiteboarding the overall idea of how this is implemented here: https://t.co/CJSlYMaFWs
+This slideshow with notes walks through whiteboarding the overall idea of [how this could be implemented](docs/embrace_the_log_whiteboarding_how.pdf).
+
+![how screenshot](docs/how_screenshot.png)
 
 
 ### Renderers
