@@ -11,7 +11,7 @@ This slideshow walks through [why this is powerful in more detail](docs/embrace_
 
 [![why screenshot](docs/why_screenshot.png)](docs/embrace_the_log_why.pdf)
 
-[Full talk from React Europe](https://www.youtube.com/watch?v=EOz4D_714R8&index=3&list=PLCC436JpVnK3HvUSAHpt-LRJkIK8pQG6R)
+[Full talk](https://www.youtube.com/watch?v=EOz4D_714R8&index=3&list=PLCC436JpVnK3HvUSAHpt-LRJkIK8pQG6R) and [full slides](docs/full_slides.pdf) from React Europe.
 
 # How it works
 The library provides a `loggit` object to components as the API, which includes:
