@@ -7,9 +7,9 @@ As data flows through, it's appended to an immutable log.  React components desc
 
 Preserving more information enables features like undo, optimistic updates or surfacing conflicting edits by simply swapping in different computations over the log.
 
-This slideshow walks through [why this is powerful in more detail](docs/embrace_the_log_motivating_why.pdf).
+This slideshow walks through [why this is powerful in more detail](docs/embrace_the_log_why.pdf).
 
-[![why screenshot](docs/why_screenshot.png)](docs/embrace_the_log_motivating_why.pdf)
+[![why screenshot](docs/why_screenshot.png)](docs/embrace_the_log_why.pdf)
 
 [Full talk from React Europe](https://www.youtube.com/watch?v=EOz4D_714R8&index=3&list=PLCC436JpVnK3HvUSAHpt-LRJkIK8pQG6R)
 
