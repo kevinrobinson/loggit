@@ -9,12 +9,11 @@ Preserving more information enables features like undo, optimistic updates or su
 
 This slideshow walks through [why this is powerful in more detail](docs/embrace_the_log_motivating_why.pdf).
 
-![why screenshot](docs/why_screenshot.png)
+[![why screenshot](docs/why_screenshot.png)](docs/embrace_the_log_motivating_why.pdf)
 
 [Full talk from React Europe](https://www.youtube.com/watch?v=EOz4D_714R8&index=3&list=PLCC436JpVnK3HvUSAHpt-LRJkIK8pQG6R)
 
 # How it works
-=======
 The library provides a `loggit` object to components as the API, which includes:
  - `recordFact`: takes a fact about something that happened, an `Action` since this is using Redux as a starting point
  - `computeFor`: the way components ask for computation to be performed.  They need to pass a reference to themselves (the React component), and need to implement a `computations` method that returns a map of `Computation` objects.
@@ -23,9 +22,10 @@ Reducers are the only computations used at this point.  `Computation` objects ar
 
 This slideshow with notes walks through whiteboarding the overall idea of [how this could be implemented](docs/embrace_the_log_whiteboarding_how.pdf).
 
-![how screenshot](docs/how_screenshot.png)
+[![how screenshot](docs/how_screenshot.png)](docs/embrace_the_log_whiteboarding_how.pdf)
 
 
+# Optimizations
 ### Renderers
 There are a few different renderers, which are notified when facts are appended to the log, and can respond in some way to update the view.  These are:
 - `NaiveReactRenderer`: after each fact, it calls `React.render` and does a top-down render.
