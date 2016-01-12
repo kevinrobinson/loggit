@@ -7,7 +7,7 @@
     "start": "scripts/browser",
     "build": "scripts/build",
     "clean": "scripts/clean",
-    "lint": "scripts/lint",
+    "lint": "scripts/lint"
   },
   "repository": {
     "type": "git",
